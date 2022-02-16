@@ -7,15 +7,16 @@ class App {
     }   
 
     async main() {
-        const resp = await input.text('What is the password?')
-        
-        if (resp == 'My Password') {
+        let resp;
 
+        while (resp != this.password) {
+            resp = await input.text('What is the password?')
+        } if (resp = 'this.password') {
             console.log('That is correct!')
         } else {
 
             console.log('Try again')
-        }
+            }
     }
 }
 
