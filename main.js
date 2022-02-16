@@ -4,6 +4,7 @@ class Pet {
         this.species = [];
         this.age = [];
         this.breed = [];
+        this.gender = [];
     }
     addSpecies(newSpecies) {
         this.species.push(newSpecies);
@@ -16,20 +17,35 @@ class Pet {
     addBreed(newBreed) {
         this.breed.push(newBreed);
         return this;
+    }
+    addGender(newGender){
+        this.gender.push(newGender);
+        return this;
     } 
     setName(newName) {
         this.name = newName;
         return this;
     }
     describe() {
-        console.log(`My ${this.species}, ${this.name}, is a ${this.age} year old ${this.breed}.`)
+        if (this.gender == 'male') {
+            console.log(
+                `My ${this.species}, ${this.name},`
+                + `is ${this.age}years old, and he is a ${this.gender} ${this.breed}.`
+            );
+        } else {
+            console.log(
+                `My ${this.species}, ${this.name},`
+                + `is ${this.age}years old, and she is a ${this.gender} ${this.breed}.`
+            )
+        }
     }
 }
 function main() {
     const myPet = new Pet('Gunner');
         myPet.addSpecies('dog')
              .addAge('4')
-             .addBreed('mutt');
+             .addBreed('mutt')
+             .addGender('male');
 
     myPet.describe();
 }
